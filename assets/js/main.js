@@ -72,7 +72,7 @@ function initScene() {
     canvas.remove();
     return;
   }
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(devicePixelRatio, innerWidth < 860 ? 1.5 : 2)); // lighter on phones
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.1;
@@ -203,11 +203,11 @@ function initScene() {
   const mouse = { x: 0, y: 0 }, sm = { x: 0, y: 0 };
   addEventListener('pointermove', e => { mouse.x = e.clientX / innerWidth * 2 - 1; mouse.y = e.clientY / innerHeight * 2 - 1; }, { passive: true });
 
-  let visible = true;
-  new IntersectionObserver(([e]) => {
-    visible = e.isIntersecting;
-    visible ? playVideo() : video.pause();
-  }).observe($('#home'));
+  let inView = true, menuOpen = false, visible = true;
+  const update = () => { visible = inView && !menuOpen; visible ? playVideo() : video.pause(); };
+  new IntersectionObserver(([e]) => { inView = e.isIntersecting; update(); }).observe($('#home'));
+  // the mobile menu covers the hero, so stop rendering 3D while it is open
+  addEventListener('menu:toggle', e => { menuOpen = e.detail; update(); });
 
   let intro = 0, startedAt = 0;
   addEventListener('app:ready', () => { startedAt = performance.now(); });
@@ -291,7 +291,9 @@ function initNav() {
     menu.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', open);
     menu.setAttribute('aria-hidden', !open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
+    dispatchEvent(new CustomEvent('menu:toggle', { detail: open }));
   };
   burger.addEventListener('click', () => toggle(!menu.classList.contains('open')));
   $$('a', menu).forEach(a => a.addEventListener('click', () => toggle(false)));
