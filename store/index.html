@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Voltix — Mobiles &amp; Laptops</title>
+<meta name="description" content="Voltix: a demo online store for mobiles and laptops, designed and built by Ajay Makwana.">
+<meta name="theme-color" content="#0B0B10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0B10'/%3E%3Cpath d='M36 8 16 36h14l-4 20 22-30H34z' fill='%23D4FF3A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="store.css">
+</head>
+<body>
+
+<div class="announce" aria-label="Offers">
+  <div class="announce-track">
+    <span>⚡ Free delivery on orders above ₹999</span><span>💳 No-cost EMI from ₹2,083/month</span><span>🔁 7-day replacement</span><span>🛡️ 1-year warranty on every device</span><span>🧪 Demo store by Ajay Makwana</span>
+    <span>⚡ Free delivery on orders above ₹999</span><span>💳 No-cost EMI from ₹2,083/month</span><span>🔁 7-day replacement</span><span>🛡️ 1-year warranty on every device</span><span>🧪 Demo store by Ajay Makwana</span>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container header-in">
+    <button class="icon-btn only-mobile" id="nav-open" aria-label="Open menu">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+    </button>
+    <a href="./" class="brand" aria-label="Voltix home">
+      <span class="brand-bolt"><svg viewBox="0 0 24 24"><path d="M13.5 2 4 14h7l-1.5 8L20 9.5h-7z"/></svg></span>VOLTIX
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Store">
+      <button class="icon-btn only-mobile nav-close" id="nav-close" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <a href="#shop" data-filter="mobile">Mobiles</a>
+      <a href="#shop" data-filter="laptop">Laptops</a>
+      <a href="#deal">Deal of the day</a>
+      <a href="#why">Why Voltix</a>
+      <a href="../" class="nav-portfolio">← Ajay’s portfolio</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="search-open" aria-label="Search products"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button class="icon-btn cart-btn" id="cart-open" aria-label="Open cart"><svg viewBox="0 0 24 24"><path d="M5 7h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="cart-count" id="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- hero -->
+  <section class="hero">
+    <div class="container hero-in">
+      <div class="hero-copy">
+        <span class="pill"><i></i> New season drop · Volt X Pro is here</span>
+        <h1>Flagship power.<br><span class="hl">Pocket-friendly</span> prices.</h1>
+        <p>Mobiles and laptops picked for creators, students and gamers. Delivered fast, backed by a 1-year warranty and no-cost EMI.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn btn-dark" data-filter="mobile">Shop mobiles</a>
+          <a href="#shop" class="btn btn-line" data-filter="laptop">Shop laptops</a>
+        </div>
+        <div class="hero-trust">
+          <div><b>48h</b><span>delivery in metros</span></div>
+          <div><b>₹0</b><span>extra on EMI</span></div>
+          <div><b>7 days</b><span>easy replacement</span></div>
+        </div>
+      </div>
+      <div class="stage" id="stage" aria-hidden="true">
+        <div class="stage-ring"></div>
+        <div class="stage-ring r2"></div>
+        <div class="stage-laptop" id="stage-laptop"></div>
+        <div class="stage-phone" id="stage-phone"></div>
+        <div class="float-chip c1"><b>Volt X Pro</b><span>from ₹54,999</span></div>
+        <div class="float-chip c2"><b>−15%</b><span>launch offer</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- categories -->
+  <section class="container cats">
+    <button class="cat" data-filter="mobile"><span class="cat-art" data-art="phone"></span><b>Mobiles</b><span id="cat-mobile-count">—</span></button>
+    <button class="cat" data-filter="laptop"><span class="cat-art" data-art="laptop"></span><b>Laptops</b><span id="cat-laptop-count">—</span></button>
+    <button class="cat" data-filter="gaming"><span class="cat-art" data-art="gaming"></span><b>Gaming</b><span>RTX powered</span></button>
+    <button class="cat" data-filter="budget"><span class="cat-art" data-art="budget"></span><b>Under ₹25K</b><span>Best value</span></button>
+  </section>
+
+  <!-- collection -->
+  <section class="container shop" id="shop">
+    <div class="shop-head">
+      <div>
+        <span class="eyebrow">Collection</span>
+        <h2 id="shop-title">All products</h2>
+      </div>
+      <div class="shop-tools">
+        <div class="tabs" role="tablist" aria-label="Filter products">
+          <button role="tab" class="tab active" data-filter="all">All</button>
+          <button role="tab" class="tab" data-filter="mobile">Mobiles</button>
+          <button role="tab" class="tab" data-filter="laptop">Laptops</button>
+          <button role="tab" class="tab" data-filter="gaming">Gaming</button>
+          <button role="tab" class="tab" data-filter="budget">Under ₹25K</button>
+        </div>
+        <label class="sort"><span>Sort</span>
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <!-- deal -->
+  <section class="container" id="deal">
+    <div class="deal">
+      <div class="deal-copy">
+        <span class="eyebrow light">Deal of the day</span>
+        <h2>Pulse G15 Gaming</h2>
+        <p>RTX 4060, 165Hz display and RGB keyboard. Today only, with a free gaming mouse.</p>
+        <div class="deal-price"><b>₹84,999</b><s>₹1,04,999</s><span class="save">Save ₹20,000</span></div>
+        <div class="countdown" id="countdown" aria-label="Deal ends in">
+          <div><b id="cd-h">00</b><span>hrs</span></div><div><b id="cd-m">00</b><span>min</span></div><div><b id="cd-s">00</b><span>sec</span></div>
+        </div>
+        <button class="btn btn-lime" id="deal-btn">Grab the deal</button>
+      </div>
+      <div class="deal-art" id="deal-art"></div>
+    </div>
+  </section>
+
+  <!-- why -->
+  <section class="container why" id="why">
+    <div class="why-item"><span>🚚</span><b>Fast, free delivery</b><p>Free above ₹999, 48 hours in metro cities.</p></div>
+    <div class="why-item"><span>💳</span><b>No-cost EMI</b><p>Split any order into 3, 6 or 9 months.</p></div>
+    <div class="why-item"><span>🛡️</span><b>1-year warranty</b><p>Every device is brand-sealed and covered.</p></div>
+    <div class="why-item"><span>🔁</span><b>7-day replacement</b><p>Not happy? We swap it, no questions.</p></div>
+  </section>
+
+  <!-- newsletter -->
+  <section class="container">
+    <div class="news">
+      <div><h2>Get drops before everyone else</h2><p>Launch offers and price drops, once a week. No spam.</p></div>
+      <form class="news-form" id="news-form">
+        <label class="sr" for="news-email">Email address</label>
+        <input id="news-email" type="email" placeholder="you@example.com" required>
+        <button class="btn btn-dark" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-in">
+    <div class="footer-brand">
+      <a href="./" class="brand"><span class="brand-bolt"><svg viewBox="0 0 24 24"><path d="M13.5 2 4 14h7l-1.5 8L20 9.5h-7z"/></svg></span>VOLTIX</a>
+      <p>Mobiles &amp; laptops, delivered.</p>
+    </div>
+    <div><b>Shop</b><a href="#shop" data-filter="mobile">Mobiles</a><a href="#shop" data-filter="laptop">Laptops</a><a href="#shop" data-filter="gaming">Gaming</a></div>
+    <div><b>Help</b><a href="#why">Delivery</a><a href="#why">Warranty</a><a href="#why">Returns</a></div>
+    <div class="footer-credit">
+      <b>Demo project</b>
+      <p>This is a portfolio demo store. No real orders or payments are taken.</p>
+      <a href="../" class="credit-link">Designed &amp; built by Ajay Makwana →</a>
+    </div>
+  </div>
+</footer>
+
+<!-- search -->
+<div class="overlay search" id="search" hidden>
+  <div class="search-box" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="search-input">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input id="search-input" type="search" placeholder="Search mobiles, laptops…" autocomplete="off">
+      <button class="icon-btn" data-close aria-label="Close search"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="search-results" id="search-results"></div>
+  </div>
+</div>
+
+<!-- quick view -->
+<div class="overlay" id="qv" hidden>
+  <div class="modal qv" role="dialog" aria-modal="true" aria-labelledby="qv-title">
+    <button class="icon-btn modal-close" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="qv-media" id="qv-media"></div>
+    <div class="qv-info">
+      <span class="eyebrow" id="qv-cat"></span>
+      <h2 id="qv-title"></h2>
+      <div class="rating" id="qv-rating"></div>
+      <div class="price-row" id="qv-price"></div>
+      <p class="emi" id="qv-emi"></p>
+      <div class="opt"><span>Colour: <b id="qv-color-name"></b></span><div class="swatches lg" id="qv-colors"></div></div>
+      <div class="opt"><span>Variant</span><div class="variants" id="qv-variants"></div></div>
+      <div class="qv-buy">
+        <div class="qty" id="qv-qty"><button aria-label="Decrease">−</button><span>1</span><button aria-label="Increase">+</button></div>
+        <button class="btn btn-dark grow" id="qv-add">Add to cart</button>
+      </div>
+      <button class="btn btn-lime full" id="qv-now">Buy it now</button>
+      <ul class="specs" id="qv-specs"></ul>
+    </div>
+  </div>
+</div>
+
+<!-- cart -->
+<div class="overlay drawer-wrap" id="cart" hidden>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-label="Cart">
+    <div class="drawer-head"><h2>Your cart <span id="cart-n"></span></h2><button class="icon-btn" data-close aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+    <div class="ship" id="ship"><p id="ship-text"></p><div class="ship-bar"><i id="ship-bar"></i></div></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="drawer-foot">
+      <div class="sum"><span>Subtotal</span><b id="subtotal">₹0</b></div>
+      <p class="note">Taxes included. Shipping calculated at checkout.</p>
+      <button class="btn btn-dark full" id="checkout-btn">Checkout</button>
+    </div>
+  </aside>
+</div>
+
+<!-- checkout -->
+<div class="overlay" id="checkout" hidden>
+  <div class="modal co" role="dialog" aria-modal="true" aria-label="Checkout">
+    <button class="icon-btn modal-close" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div id="co-form-wrap">
+      <h2>Checkout</h2>
+      <p class="demo-note">Demo checkout — nothing is sent anywhere and no payment is taken.</p>
+      <form id="co-form" class="co-form">
+        <label>Full name<input required autocomplete="off" placeholder="Your name"></label>
+        <label>Phone<input required inputmode="numeric" pattern="[0-9]{10}" autocomplete="off" placeholder="10-digit number"></label>
+        <label class="span2">Address<input required autocomplete="off" placeholder="House, street, city"></label>
+        <label>PIN code<input required inputmode="numeric" pattern="[0-9]{6}" autocomplete="off" placeholder="6 digits"></label>
+        <fieldset class="pay"><legend>Payment</legend>
+          <label><input type="radio" name="pay" checked> Cash on delivery</label>
+          <label><input type="radio" name="pay"> UPI on delivery</label>
+        </fieldset>
+        <div class="co-sum span2"><span>Total</span><b id="co-total">₹0</b></div>
+        <button class="btn btn-dark full span2" type="submit">Place order</button>
+      </form>
+    </div>
+    <div class="co-done" id="co-done" hidden>
+      <div class="tick">✓</div>
+      <h2>Order placed!</h2>
+      <p>Order <b id="order-id"></b> is confirmed. (Demo — no real order was created.)</p>
+      <button class="btn btn-dark" data-close>Continue shopping</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="store.js"></script>
+</body>
+</html>

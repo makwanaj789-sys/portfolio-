@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ajay Makwana — Video Editor, Motion Designer &amp; Developer</title>
+<meta name="description" content="Ajay Makwana (AjayxNJ): After Effects video editor, motion designer, content creator and developer. Reels with millions of views, a 200K+ view YouTube channel, Telegram bots and e-commerce stores.">
+<meta name="theme-color" content="#07090F">
+<meta property="og:title" content="Ajay Makwana — Video Editor & Developer">
+<meta property="og:description" content="After Effects edits, motion graphics, reels, Telegram bots and online stores.">
+<meta property="og:image" content="assets/img/reel-transition.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2307090F'/%3E%3Cpath d='M18 46 30 16h4l12 30h-6l-3-8H27l-3 8z M29 33h6l-3-9z' fill='%23FFB23E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script type="importmap">{"imports":{"three":"./assets/js/vendor/three.module.min.js"}}</script>
+</head>
+<body class="is-loading">
+
+<!-- ===== Loader: a render progress bar ===== -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-top"><span>AJAYxNJ.aep</span><span>RENDER QUEUE</span></div>
+    <div class="loader-tc" id="loader-tc">00:00:00:00</div>
+    <div class="loader-bar"><i id="loader-bar"></i></div>
+    <div class="loader-bottom"><span>H.264 · 1080×1920 · 30fps</span><span id="loader-pct">0%</span></div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><div class="cursor-dot"></div><div class="cursor-ring"><span class="cursor-label"></span></div></div>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<!-- ===== Navigation ===== -->
+<header class="nav" id="nav">
+  <a href="#home" class="logo" aria-label="Ajay Makwana, home">
+    <span class="logo-mark">A</span><span class="logo-text">Ajay<b>x</b>NJ</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#reels">Reels</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Journey</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="btn btn-small magnetic nav-cta">Hire me</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="#reels">Reels</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#experience">Journey</a><a href="#contact">Contact</a>
+</div>
+
+<main>
+<!-- ===== Hero with WebGL scene ===== -->
+<section class="hero" id="home">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hero-fallback" aria-hidden="true"><div class="css-phone"><video src="assets/video/reel-transition.mp4" poster="assets/img/reel-transition.jpg" muted loop playsinline autoplay></video></div></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-reveal><span class="live-dot"></span> Available for freelance &amp; full-time</div>
+    <h1 class="hero-title">
+      <span class="line"><span class="word">I edit</span> <span class="word">videos</span></span>
+      <span class="line"><span class="word">people</span> <span class="word grad">watch.</span></span>
+      <span class="line"><span class="word">I build</span> <span class="word">tools</span></span>
+      <span class="line"><span class="word">people</span> <span class="word grad2">use.</span></span>
+    </h1>
+    <p class="hero-sub" data-reveal>Ajay Makwana — <b>After Effects editor</b>, motion designer &amp; developer. Reels with <b>millions of views</b>, a YouTube channel past <b>200K views</b>, and bots &amp; stores I build myself.</p>
+    <div class="hero-actions" data-reveal>
+      <a href="#reels" class="btn magnetic"><span>Watch my edits</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></a>
+      <a href="store/" class="btn btn-ghost magnetic"><span>Open my store project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+    </div>
+  </div>
+  <div class="hero-hud" aria-hidden="true">
+    <div><span>REC</span> <b id="hud-tc">00:00:00:00</b></div>
+    <div>COMP 01 · SHOWREEL</div>
+    <div class="scroll-hint">SCROLL <i></i></div>
+  </div>
+</section>
+
+<!-- ===== Marquee ===== -->
+<div class="marquee-wrap"><div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>After Effects</span><i>✦</i><span>Motion Graphics</span><i>✦</i><span>Instagram Reels</span><i>✦</i><span>YouTube Growth</span><i>✦</i><span>Python Bots</span><i>✦</i><span>E-commerce Stores</span><i>✦</i>
+    <span>After Effects</span><i>✦</i><span>Motion Graphics</span><i>✦</i><span>Instagram Reels</span><i>✦</i><span>YouTube Growth</span><i>✦</i><span>Python Bots</span><i>✦</i><span>E-commerce Stores</span><i>✦</i>
+  </div>
+</div></div>
+
+<!-- ===== Stats ===== -->
+<section class="stats-sec">
+  <div class="wrap stats">
+    <div class="stat" data-reveal><strong><span data-count="1" data-suffix="M+">0</span></strong><span>views on my Instagram reels</span></div>
+    <div class="stat" data-reveal><strong><span data-count="200" data-suffix="K+">0</span></strong><span>views on my YouTube channel</span></div>
+    <div class="stat" data-reveal><strong><span data-count="4000" data-suffix="+">0</span></strong><span>YouTube watch hours</span></div>
+    <div class="stat" data-reveal><strong><span data-count="2" data-suffix=" yrs">0</span></strong><span>of After Effects editing</span></div>
+  </div>
+</section>
+
+<!-- ===== Reels ===== -->
+<section class="sec" id="reels">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tc" data-reveal>00:00:04:12 — Showreel</span>
+      <h2 class="sec-title" data-reveal>After Effects edits</h2>
+      <p class="sec-sub" data-reveal>Three of my own edits. Hover to preview, tap to watch with sound.</p>
+    </div>
+    <div class="reels">
+      <article class="reel" data-reveal data-video="assets/video/reel-space.mp4" data-title="Space Intro · Phone Mockup" tabindex="0" role="button" aria-label="Play Space Intro edit">
+        <div class="reel-3d tilt">
+          <div class="reel-frame">
+            <video src="assets/video/reel-space.mp4" poster="assets/img/reel-space.jpg" muted loop playsinline preload="metadata"></video>
+            <div class="reel-glare"></div>
+            <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="tc">01 · 00:29</span><h3>Space Intro &amp; 3D Phone</h3><p>3D moon intro, neon title, phone mockup and glitch flashes.</p></div>
+      </article>
+      <article class="reel" data-reveal data-video="assets/video/reel-velocity.mp4" data-title="Velocity · Smooth Edit" tabindex="0" role="button" aria-label="Play Velocity edit">
+        <div class="reel-3d tilt">
+          <div class="reel-frame">
+            <video src="assets/video/reel-velocity.mp4" poster="assets/img/reel-velocity.jpg" muted loop playsinline preload="metadata"></video>
+            <div class="reel-glare"></div>
+            <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="tc">02 · 00:23</span><h3>Velocity &amp; Text Edit</h3><p>Speed ramps, motion blur, kinetic text and halftone lens.</p></div>
+      </article>
+      <article class="reel" data-reveal data-video="assets/video/reel-transition.mp4" data-title="Advanced Transition Edit" tabindex="0" role="button" aria-label="Play Advanced Transition edit">
+        <div class="reel-3d tilt">
+          <div class="reel-frame">
+            <video src="assets/video/reel-transition.mp4" poster="assets/img/reel-transition.jpg" muted loop playsinline preload="metadata"></video>
+            <div class="reel-glare"></div>
+            <div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+        </div>
+        <div class="reel-meta"><span class="tc">03 · 00:19</span><h3>Advanced Transitions</h3><p>Light-trail strokes, shimmer transitions and flash cuts.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Work ===== -->
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tc" data-reveal>00:00:09:20 — Selected work</span>
+      <h2 class="sec-title" data-reveal>Things I built &amp; grew</h2>
+    </div>
+
+    <!-- Store project: 3D laptop + phone mockups with the live site inside -->
+    <a href="store/" class="store-show" data-reveal data-cursor="Open store" aria-label="Open Voltix, the mobile and laptop store I built">
+      <div class="store-info">
+        <span class="tag">E-commerce · Shopify-style store</span>
+        <h3>Voltix — Mobiles &amp; Laptops store</h3>
+        <p>A complete online store: collections, filters, quick view, variants with live pricing, cart drawer with free-delivery meter, deal countdown and a checkout flow. Fully responsive for mobile and laptop.</p>
+        <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span><span>Cart + Checkout</span></div>
+        <span class="btn magnetic">Visit the live store <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2"/></svg></span>
+      </div>
+      <div class="devices">
+        <div class="laptop">
+          <div class="laptop-lid"><div class="laptop-screen"><iframe src="store/?preview=1" title="Voltix store preview on laptop" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div></div>
+          <div class="laptop-base"></div>
+        </div>
+        <div class="mini-phone"><div class="mini-phone-screen"><iframe src="store/?preview=1" title="Voltix store preview on phone" loading="lazy" tabindex="-1" aria-hidden="true"></iframe></div></div>
+      </div>
+    </a>
+
+    <div class="work-grid">
+      <article class="card card-yt tilt-soft" data-reveal>
+        <div class="card-glow"></div>
+        <span class="tag">YouTube · Content strategy</span>
+        <h3>Am4uh: a music channel grown from zero</h3>
+        <p>Slowed + reverb, bass-boosted and audio-edit versions of Hindi and Gujarati songs. I plan uploads, design thumbnails and titles, and test what works: evening uploads beat mornings, and festival content posted early rides the search wave. One Navratri garba mashup crossed 98K views alone.</p>
+        <div class="kpis"><span class="kpi">200K+ views</span><span class="kpi">4,000+ watch hours</span><span class="kpi">1.4K+ subscribers</span><span class="kpi">98K on one video</span></div>
+        <a class="link" href="https://www.youtube.com/@AartiMusic77" target="_blank" rel="noopener">Watch the channel ↗</a>
+      </article>
+      <article class="card card-ig tilt-soft" data-reveal>
+        <div class="card-glow"></div>
+        <span class="tag">Instagram · Reels</span>
+        <h3>Reels with millions of views</h3>
+        <p>Short-form edits built around a strong first two seconds, trending audio and fast pacing.</p>
+        <a class="link" href="https://www.instagram.com/h81t6/" target="_blank" rel="noopener">@h81t6 ↗</a>
+      </article>
+      <article class="card tilt-soft" data-reveal>
+        <div class="card-glow"></div>
+        <span class="tag">Telegram · Python</span>
+        <h3>AartiMusic Bot</h3>
+        <p>Plays songs with effects (slowed, reverb, bass boost, 8D, nightcore), voice search and premium downloads. Built, hosted on a cloud server and promoted through the channel.</p>
+        <div class="stack"><span>Python</span><span>Pyrogram</span><span>MongoDB</span><span>Groq AI</span><span>Linux VPS</span></div>
+        <a class="link" href="https://t.me/AartiMusic_bot" target="_blank" rel="noopener">Open the bot ↗</a>
+      </article>
+      <article class="card tilt-soft" data-reveal>
+        <div class="card-glow"></div>
+        <span class="tag">Telegram · AI</span>
+        <h3>Aarti Chat Bot</h3>
+        <p>A Hinglish chat bot that remembers each user, with profiles and a tic-tac-toe leaderboard, powered by Llama 3.3 on Groq.</p>
+        <div class="stack"><span>Groq</span><span>Llama 3.3</span><span>MongoDB Atlas</span><span>Railway</span></div>
+        <a class="link" href="https://t.me/Aartigc_bot" target="_blank" rel="noopener">Open the bot ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section class="sec" id="skills">
+  <div class="wrap skills-wrap">
+    <div>
+      <div class="sec-head">
+        <span class="tc" data-reveal>00:00:14:03 — Skills</span>
+        <h2 class="sec-title" data-reveal>What I bring to a team</h2>
+        <p class="sec-sub" data-reveal>Drag or move over the sphere to spin it.</p>
+      </div>
+      <div class="skill-groups">
+        <div class="sg" data-reveal><h3>Video &amp; Design</h3>
+          <div class="bar-row"><span>After Effects</span><i style="--v:92%"></i></div>
+          <div class="bar-row"><span>Motion graphics</span><i style="--v:88%"></i></div>
+          <div class="bar-row"><span>Reels &amp; short video</span><i style="--v:94%"></i></div>
+          <div class="bar-row"><span>Canva · Thumbnails</span><i style="--v:85%"></i></div>
+          <div class="bar-row"><span>Photoshop · CorelDRAW</span><i style="--v:45%"></i></div>
+        </div>
+        <div class="sg" data-reveal><h3>Social &amp; Marketing</h3>
+          <div class="bar-row"><span>Instagram growth</span><i style="--v:90%"></i></div>
+          <div class="bar-row"><span>YouTube strategy</span><i style="--v:88%"></i></div>
+          <div class="bar-row"><span>Content planning · Analytics</span><i style="--v:72%"></i></div>
+          <div class="bar-row"><span>SEO basics</span><i style="--v:62%"></i></div>
+          <div class="bar-row"><span>Meta Ads</span><i style="--v:40%"></i></div>
+        </div>
+        <div class="sg" data-reveal><h3>Tech</h3>
+          <div class="bar-row"><span>Python &amp; Telegram bots</span><i style="--v:88%"></i></div>
+          <div class="bar-row"><span>HTML · CSS · JS</span><i style="--v:72%"></i></div>
+          <div class="bar-row"><span>Linux servers &amp; cloud</span><i style="--v:70%"></i></div>
+          <div class="bar-row"><span>MongoDB · Excel</span><i style="--v:68%"></i></div>
+          <div class="bar-row"><span>WordPress · Shopify</span><i style="--v:50%"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="sphere-box" data-reveal>
+      <div class="sphere" id="sphere" aria-label="Skills: After Effects, Premiere, Motion Graphics, Reels, Canva, Photoshop, Instagram, YouTube, SEO, Meta Ads, Python, Pyrogram, MongoDB, Linux, Groq AI, HTML, CSS, JavaScript, WordPress, Shopify, Excel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Experience ===== -->
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tc" data-reveal>00:00:18:00 — Journey</span>
+      <h2 class="sec-title" data-reveal>Where I have worked</h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="tl-line"><i id="tl-fill"></i></div>
+      <div class="tl-item" data-reveal><div class="tl-dot"></div>
+        <span class="tc">Now</span><h3>Video Editor &amp; Motion Designer</h3><div class="where">Freelance &amp; own projects · 2 years</div>
+        <p>Edit reels, music videos and motion graphics in After Effects. Self-taught, and grew Instagram reels to millions of views.</p></div>
+      <div class="tl-item" data-reveal><div class="tl-dot"></div>
+        <span class="tc">Ongoing</span><h3>Independent Developer</h3><div class="where">Own projects · Python, web, cloud</div>
+        <p>Build, host and maintain Telegram bots used inside and outside India, and build web stores. Handle servers, databases, payments and updates myself.</p></div>
+      <div class="tl-item" data-reveal><div class="tl-dot"></div>
+        <span class="tc">Industry</span><h3>Production Operator, Cell Cutting</h3><div class="where">Solar module manufacturing plant</div>
+        <p>First stage of the solar panel line: laser-cutting full cells into half-cut cells and checking them for cracks. Saw the full process from cell to module: stringing, layup, EL testing, lamination, framing and flash testing.</p></div>
+      <div class="tl-item" data-reveal><div class="tl-dot"></div>
+        <span class="tc">Education</span><h3>Computer Engineering</h3><div class="where">Graduate</div>
+        <p>A technical base that helps me pick up tools fast, from website builders to ad dashboards.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pitch ===== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="pitch" data-reveal>
+      <div class="pitch-bg" aria-hidden="true"></div>
+      <span class="tc">00:00:21:15 — For solar &amp; manufacturing brands</span>
+      <h2>I have stood on the production line.<br><span class="grad">I can film it.</span></h2>
+      <ol>
+        <li><b>“Cell to Panel” reel series</b> — one 15-second clip for each stage, from cutting to flash test.</li>
+        <li><b>Subsidy explainers</b> — short motion-graphic videos on rooftop solar subsidy and savings.</li>
+        <li><b>LinkedIn for dealers</b> — capacity, certifications and quality testing, posted every week.</li>
+        <li><b>Monthly report</b> — reach, engagement and leads by platform, tracked in Excel.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="sec contact-sec" id="contact">
+  <div class="wrap">
+    <span class="tc" data-reveal>00:00:24:00 — Contact</span>
+    <h2 class="big-cta" data-reveal>Let’s make<br>something <span class="grad">viral.</span></h2>
+    <div class="contact">
+      <div class="mail" data-reveal>
+        <span class="tag">Email for work</span>
+        <span class="addr" id="addr">makwanaj77ajay77j@gmail.com</span>
+        <div class="mail-actions">
+          <a class="btn magnetic" href="mailto:makwanaj77ajay77j@gmail.com">Send an email</a>
+          <button class="btn btn-ghost magnetic" id="copy-btn" type="button">Copy email</button>
+        </div>
+      </div>
+      <div class="socials" data-reveal>
+        <a class="soc" href="https://www.youtube.com/@AartiMusic77" target="_blank" rel="noopener"><b>YouTube</b><span>@AartiMusic77</span><i>↗</i></a>
+        <a class="soc" href="https://www.instagram.com/h81t6/" target="_blank" rel="noopener"><b>Instagram</b><span>@h81t6</span><i>↗</i></a>
+        <a class="soc" href="https://t.me/AartiMusic_bot" target="_blank" rel="noopener"><b>Telegram</b><span>@AartiMusic_bot</span><i>↗</i></a>
+        <a class="soc" href="store/"><b>Store project</b><span>Voltix</span><i>↗</i></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot wrap">
+  <span>© 2026 Ajay Makwana · AjayxNJ</span>
+  <span class="tc">END OF TIMELINE</span>
+  <a href="#home">Back to top ↑</a>
+</footer>
+
+<!-- ===== Video lightbox ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Close video">✕</button>
+  <div class="lb-inner">
+    <video id="lb-video" controls playsinline></video>
+    <div class="lb-title" id="lb-title"></div>
+  </div>
+</div>
+
+<script type="module" src="assets/js/main.js"></script>
+</body>
+</html>
