@@ -321,9 +321,10 @@ function initReveal() {
 }
 function countUp(el) {
   const target = +el.dataset.count, suffix = el.dataset.suffix || '', dur = 1800, t0 = performance.now();
+  const decimals = (el.dataset.count.split('.')[1] || '').length;
   (function f(now) {
     const k = clamp((now - t0) / dur, 0, 1), e = 1 - Math.pow(1 - k, 3);
-    el.textContent = Math.round(target * e).toLocaleString('en-US') + suffix;
+    el.textContent = (target * e).toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + suffix;
     if (k < 1) requestAnimationFrame(f);
   })(t0);
 }

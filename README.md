@@ -1,6 +1,6 @@
 # Ajay Makwana — Portfolio
 
-3D portfolio for **Ajay Makwana (AjayxNJ)**: After Effects video editor, motion designer, content creator and developer.
+3D portfolio for **Ajay Makwana**: After Effects video editor, motion designer, content creator and developer.
 
 ## What's inside
 
