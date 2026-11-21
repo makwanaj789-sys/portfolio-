@@ -221,6 +221,8 @@ p{margin:0}
 .card p{color:var(--muted);font-size:15px}
 .card-glow{position:absolute;width:340px;height:340px;border-radius:50%;left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,178,62,.16),transparent 65%);pointer-events:none;opacity:0;transition:opacity .4s}
 .card:hover .card-glow{opacity:1}
+.card .note{font-size:14px;padding:12px 14px;border-radius:14px;background:rgba(255,178,62,.08);border:1px solid rgba(255,178,62,.25);color:var(--muted)}
+.card .note b{color:var(--amber)}
 .kpis{display:flex;flex-wrap:wrap;gap:8px}
 .kpi{font:700 13px var(--body);padding:6px 12px;border-radius:999px;background:rgba(255,178,62,.12);color:var(--amber);font-variant-numeric:tabular-nums}
 .link{margin-top:auto;font-weight:800;font-size:14px;align-self:flex-start;background:linear-gradient(currentColor,currentColor) 0 100%/100% 2px no-repeat;padding-bottom:3px;transition:background-size .4s var(--ease),color .2s}
