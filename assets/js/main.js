@@ -412,7 +412,7 @@ function initSphere() {
     ['After Effects', 'hot'], ['Motion Graphics', 'hot'], ['Reels', 'hot'], ['Premiere Pro'], ['Canva'], ['Thumbnails', 'hot'],
     ['Photoshop'], ['CorelDRAW'], ['Instagram', 'hot'], ['YouTube', 'hot'], ['SEO'], ['Meta Ads'], ['Analytics'],
     ['Python', 'cool'], ['Pyrogram', 'cool'], ['MongoDB', 'cool'], ['Linux VPS', 'cool'], ['Groq AI', 'cool'],
-    ['HTML', 'cool'], ['CSS', 'cool'], ['JavaScript', 'cool'], ['WordPress'], ['Shopify'], ['Excel'], ['Color grading', 'hot'], ['Sound design'],
+    ['HTML', 'cool'], ['CSS', 'cool'], ['JavaScript', 'cool'], ['WordPress'], ['Shopify'], ['MS Excel', 'cool'], ['Data Entry', 'hot'], ['Typing', 'cool'], ['Color grading', 'hot'], ['Sound design'],
   ];
   const n = words.length, golden = Math.PI * (3 - Math.sqrt(5));
   const pts = words.map(([w, cls], i) => {
